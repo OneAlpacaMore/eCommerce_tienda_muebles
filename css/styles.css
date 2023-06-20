@@ -1,10 +1,15 @@
 html {
     box-sizing: border-box;
+    font-size: 62.5%; /*1REM = 10px*/
   }
   *, *:before, *:after {
     box-sizing: inherit;
+    margin: 0;
   }
-
+body {
+    font-size: 1.6rem;
+    line-height: 2;
+}
 :root {
     --black: #000000;
     --grey: #e1e1e1;
@@ -12,11 +17,26 @@ html {
     --white: #ffffff;
 }
 /*Globales*/
+h1 {
+    font-family: 'PT Serif', serif;
+    font-size: 4rem;
+}
+h2,
+h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+}
+p {
+    font-family: 'Domine', serif;
+}
 a {
     text-decoration: none;
+    font-size: 2rem;
 }
+
 .container {
-     max-width: 1200px;
+     max-width: 120rem;
      margin: 0 auto;
 }
 img{
@@ -25,39 +45,61 @@ img{
 }
 /*Header y Navegación*/
 .nombre-sitio {
-    margin: 50px 0;
+    margin: 4rem 0;
     text-align: center;
 }
 .nombre-sitio span {
     color: var(--ocean-boat-blue);
 }
 .nav-container {
-    border-top: 1px solid var(--grey);
+    border-top: 0.1rem solid var(--grey);
 }
 .nav-principal {
-    padding: 20px 0;
+    padding: 2rem 0;
     display: flex;
     justify-content: space-around;
 }
 
 .hero {
     background-image: url(../img/principal.jpg);
-    height: 550px;
+    background-size: cover;
+    background-position: center  center;
+    height: 50.5rem;
 }
 /*Categorías de productos*/
 .listado-categorias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 10px;
+    gap: 0 1rem;
 }
 .categoria a {
     display: block;
     text-align: center;
-    padding: 20px;
-    font-size: 20px;
+    padding: 2rem;
+    font-size: 2rem;
 }
 .categoria a:hover {
     background-color: var(--ocean-boat-blue);
     color: var(--white);
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
+/*Sobre nosotros*/
+.sobre-nosotros {
+    background-image: linear-gradient( to right, transparent 50%, var(--ocean-boat-blue) 50%, var(--ocean-boat-blue) 100%),
+    url(../img/nosotros.jpg);
+    background-position: left center;
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+    margin: 6rem auto;
+}
+.sobre-nosotros-flex {
+    display: flex;
+    justify-content: flex-end;
+}
+.texto-nosotros {
+   flex-basis: 50%;
+   padding: 0 5rem;
+   color: var(--white);
+}
+/*Sección productos*/
