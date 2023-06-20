@@ -36,7 +36,9 @@ a {
     text-decoration: none;
     font-size: 2rem;
 }
-
+a:visited {
+    color: var(--black);
+}
 .container {
      max-width: 120rem;
      margin: 0 auto;
@@ -181,3 +183,20 @@ img{
     font-weight: 900;
 }
 /*Footer*/
+.footer {
+    border-top: 0.1rem solid var(--grey);
+    margin-top: 4rem;
+    padding-top: 4rem;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.nav-flex {
+    display: flex;
+    flex-direction: column;
+}
+.footer p {
+    margin-top: 4rem;
+}
