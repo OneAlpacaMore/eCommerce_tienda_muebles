@@ -31,12 +31,14 @@ h3 {
 }
 p {
     font-family: 'Domine', serif;
+    margin: 1rem 0;
 }
 a {
     text-decoration: none;
     font-size: 2rem;
 }
-a:visited {
+a:visited,
+a:link {
     color: var(--black);
 }
 .container {
@@ -199,4 +201,16 @@ img{
 }
 .footer p {
     margin-top: 4rem;
+}
+/*Nosotros*/
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));
+    column-gap: 2rem;
+}
+.informacion-nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
