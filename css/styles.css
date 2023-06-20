@@ -9,6 +9,7 @@ html {
     --black: #000000;
     --grey: #e1e1e1;
     --ocean-boat-blue: #037BC0;
+    --white: #ffffff;
 }
 /*Globales*/
 a {
@@ -16,6 +17,11 @@ a {
 }
 .container {
      max-width: 1200px;
+     margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    display: block;
 }
 /*Header y Navegación*/
 .nombre-sitio {
@@ -30,7 +36,6 @@ a {
 }
 .nav-principal {
     padding: 20px 0;
-    margin: 0 auto;
     display: flex;
     justify-content: space-around;
 }
@@ -38,4 +43,21 @@ a {
 .hero {
     background-image: url(../img/principal.jpg);
     height: 550px;
+}
+/*Categorías de productos*/
+.listado-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 10px;
+}
+.categoria a {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+.categoria a:hover {
+    background-color: var(--ocean-boat-blue);
+    color: var(--white);
+    border-radius: 0 0 5px 5px;
 }
