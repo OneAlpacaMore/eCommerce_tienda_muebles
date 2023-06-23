@@ -463,10 +463,12 @@ aside h3 {
 }
 
 /*Contacto -- formulario*/
+
 .formulario {
     max-width: 60rem;
     margin: 0 auto;
 }
+
 
 .formulario fieldset {
     border: 1px solid var(--black);
@@ -486,23 +488,39 @@ aside h3 {
 
 .campo {
     display: flex;
+    flex-direction: column;
     margin-bottom: 1rem;
+    align-items: center;
 
 }
 
-.campo label {
-    flex-basis: 10rem;
+@media (min-width: 768px) {
+    .campo {
+        flex-direction: row;
+    }
+    .campo label {
+        flex-basis: 10rem;
+    }
 }
+
+
 
 .campo input:not([type="radio"]),
 textarea,
 .campo select {
     flex: 1;
+    width: 100%;
     border: 1px solid var(--grey);
     padding: 1.5rem;
 }
 
 input[type="submit"] {
     padding: 1rem;
-    font-weight: 900
+    font-weight: 900;
+    margin: 0 auto;
+}
+@media (min-width: 768px) { 
+    input[type="submit"] {
+        margin: 0;
+    }
 }
