@@ -105,11 +105,13 @@ img {
     margin: 0 auto;
     max-width: 30rem;
 }
-@media (min-width: 768px) { 
+
+@media (min-width: 768px) {
     .max-width-30 {
         margin: 0;
+    }
 }
-}
+
 /*Header y Navegación*/
 .nombre-sitio {
     margin: 4rem 0;
@@ -366,7 +368,7 @@ img {
 }
 
 /*Nosotros*/
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .contenido-nosotros {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -382,7 +384,7 @@ img {
 }
 
 /*Blog*/
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .contenedor-blog {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -428,17 +430,36 @@ aside h3 {
 /*Galería*/
 .galeria {
     list-style: none;
+    display: grid;
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+
 }
 
-.galeria img {
-    height: 40rem;
-    width: 40rem;
-    object-fit: cover;
+@media (min-width: 768px) {
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .galeria img {
+        height: 40rem;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .galeria img {
+        height: 40rem;
+        width: 40rem;
+        object-fit: cover;
+    }
 }
 
 /*Contacto -- formulario*/
