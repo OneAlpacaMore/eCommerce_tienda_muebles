@@ -444,7 +444,7 @@ aside h3 {
 
     .galeria img {
         height: 40rem;
-        max-width: 100%;
+        width: 100%;
         object-fit: cover;
     }
 }
