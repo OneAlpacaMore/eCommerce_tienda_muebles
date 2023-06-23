@@ -1,15 +1,21 @@
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /*1REM = 10px*/
-  }
-  *, *:before, *:after {
+    font-size: 62.5%;
+    /*1REM = 10px*/
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
     margin: 0;
-  }
+}
+
 body {
     font-size: 1.6rem;
     line-height: 1.8;
 }
+
 :root {
     --apple-green: #8cbc00;
     --black: #000000;
@@ -18,21 +24,45 @@ body {
     --olive: #769c02;
     --white: #ffffff;
 }
+
 /*Globales*/
 h1 {
     font-family: 'PT Serif', serif;
     font-size: 4rem;
 }
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+
 h2,
 h3 {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
-    font-size: 3rem; /*-- se desborda en pantallas pequeñas en sección productos--*/
+    font-size: 2.4rem;
+    /*-- se desborda en pantallas pequeñas en sección productos--*/
 }
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 4rem;
+    }
+}
+
 p {
     font-family: 'Domine', serif;
     margin: 1rem 0;
 }
+
 a {
     text-decoration: none;
     font-size: 2rem;
@@ -40,10 +70,11 @@ a {
 }
 
 .container {
-     max-width: 120rem;
-     margin: 0 auto;
+    max-width: 120rem;
+    margin: 0 auto;
 }
-img{
+
+img {
     max-width: 100%;
     display: block;
 }
@@ -64,6 +95,7 @@ img{
     background-color: var(--olive);
     cursor: pointer;
 }
+
 /*Utilidades*/
 .text-center {
     text-align: center;
@@ -72,174 +104,301 @@ img{
 .max-width-30 {
     max-width: 30rem;
 }
+
 /*Header y Navegación*/
 .nombre-sitio {
     margin: 4rem 0;
 }
+
 .nombre-sitio span {
     color: var(--ocean-boat-blue);
 }
+
 .nav-container {
     border-top: 0.1rem solid var(--grey);
 }
+
 .nav-principal {
     padding: 2rem 0;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .nav-principal {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .hero {
     background-image: url(../img/principal.jpg);
     background-size: cover;
-    background-position: center  center;
-    height: 50.5rem;
+    background-position: center center;
+    height: 25rem;
 }
+
+@media (min-width: 768px) {
+    .hero {
+        height: 50.5rem;
+    }
+}
+
 /*Categorías de productos*/
-.listado-categorias {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 1rem;
+.listado-categorias img {
+    width: 100%;
 }
+
+@media (min-width: 768px) {
+    .listado-categorias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 1rem;
+    }
+}
+
 .categoria a {
     display: block;
     padding: 2rem;
     font-size: 2rem;
 }
+
 .categoria a:hover {
     background-color: var(--ocean-boat-blue);
     color: var(--white);
     border-radius: 0 0 0.5rem 0.5rem;
 }
+
 /*Sobre nosotros*/
 .sobre-nosotros {
-    background-image: linear-gradient( to right, transparent 50%, var(--ocean-boat-blue) 50%, var(--ocean-boat-blue) 100%),
-    url(../img/nosotros.jpg);
     background-position: left center;
-    padding: 10rem 0;
+
     background-repeat: no-repeat;
     background-size: 100%, 128rem;
     margin-top: 6rem;
 }
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        background-image: linear-gradient(to right, transparent 50%, var(--ocean-boat-blue) 50%, var(--ocean-boat-blue) 100%),
+            url(../img/nosotros.jpg);
+        padding: 10rem 0;
+    }
+
+    .sobre-nosotros-flex img {
+        display: none;
+    }
+}
+
 .sobre-nosotros-flex {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+
 }
+
+@media (min-width: 768px) {
+    .sobre-nosotros-flex {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
 .texto-nosotros {
-   flex-basis: 50%;
-   padding: 0 5rem;
-   color: var(--white);
+    text-align: center;
+    color: var(--white);
+    padding: 5rem;
+    background-color: var(--ocean-boat-blue);
 }
+
+@media (min-width: 768px) {
+    .texto-nosotros {
+        flex-basis: 50%;
+        padding: 0 5rem;
+    }
+}
+
 /*Sección productos*/
-.seccion-principal h2{
+.seccion-principal h2 {
     margin: 40px 0;
 }
-.listado-productos {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-}
+
 .producto {
     background-color: var(--ocean-boat-blue);
 }
+
+.listado-productos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .listado-productos {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+
+        .producto:nth-child(1) {
+            display: grid;
+        }
+    }
+}
+
 .producto:nth-child(1) {
+    display: flex;
+    flex-direction: column;
     grid-column: 1 / 7;
-    display: grid;
     grid-template-columns: 3fr 1fr;
 }
+
 .producto:nth-child(1) img {
     height: 43rem;
     width: 100%;
     object-fit: cover;
 }
+
 .producto:nth-child(2) {
     grid-column: 1 / 4;
 }
+
 .producto:nth-child(2) img,
 .producto:nth-child(3) img {
     height: 30rem;
     width: 100%;
     object-fit: cover;
 }
+
 .producto:nth-child(3) {
     grid-column: 4 / 7;
 }
+
 .producto:nth-child(4) {
     grid-column: 1 / 3;
 }
+
 .producto:nth-child(4) {
     grid-column: 1 / 3;
 }
+
 .producto:nth-child(5) {
     grid-column: 3 / 5;
 }
+
 .producto:nth-child(6) {
     grid-column: 5 / 7;
 }
+
 .texto-producto {
     text-align: center;
     color: var(--white);
     padding: 2rem;
 }
+
 .texto-producto h3 {
     margin: 0;
 }
+
 .texto-producto p {
     margin: 0 0 0.5rem 0;
 }
+
 .texto-producto .precio {
-    font-size: 2.8rem; /*-- se desborda en pantallas pequeñas--*/
+    font-size: 2.8rem;
+    /*-- se desborda en pantallas pequeñas--*/
     font-weight: 900;
 }
+
+
 /*Footer*/
 .footer {
     border-top: 0.1rem solid var(--grey);
     margin-top: 5rem;
     padding-top: 2.5rem;
 }
+
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+@media (min-width: 768px) {
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.footer-container h3 {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container h3 {
+        font-size: 3.5rem;
+    }
+}
+
+.footer-container a {
+    font-size: 2rem;
+}
+
 .nav-flex {
     display: flex;
     flex-direction: column;
 }
+
 .footer p {
     margin-top: 4rem;
+    font-size: 1rem;
 }
+
+.footer-section {
+    margin-bottom: 3rem;
+}
+
 /*Nosotros*/
 .contenido-nosotros {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     column-gap: 2rem;
 }
+
 .informacion-nosotros {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 /*Blog*/
-.contenedor-blog{
+.contenedor-blog {
     display: grid;
     grid-template-columns: 2fr 1fr;
     column-gap: 4rem;
 }
+
 .blog h2 {
     margin-top: 0;
 }
+
 aside h3 {
     margin-bottom: 3rem;
 }
+
 .entrada {
     border-bottom: 2px solid var(--grey);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
 }
+
 .entrada:last-of-type {
     border: none;
 }
+
 .entrada-meta {
     display: flex;
     justify-content: space-between;
@@ -248,12 +407,15 @@ aside h3 {
 .entrada-meta p {
     font-weight: bold;
 }
+
 .entrada-meta span {
     color: var(--ocean-boat-blue);
 }
+
 .contenedor-entrada {
     max-width: 60rem;
 }
+
 /*Galería*/
 .galeria {
     list-style: none;
@@ -263,20 +425,24 @@ aside h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
+
 .galeria img {
     height: 40rem;
     width: 40rem;
     object-fit: cover;
 }
+
 /*Contacto -- formulario*/
 .formulario {
     max-width: 60rem;
     margin: 0 auto;
 }
+
 .formulario fieldset {
     border: 1px solid var(--black);
     margin-bottom: 2rem;
 }
+
 .formulario legend {
     background-color: var(--ocean-boat-blue);
     width: 100%;
@@ -289,10 +455,11 @@ aside h3 {
 }
 
 .campo {
-display: flex;
-margin-bottom: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
 
 }
+
 .campo label {
     flex-basis: 10rem;
 }
